@@ -39,12 +39,29 @@ SpecVSMarco/
 
 ## Estado
 
-🚧 En construcción. Avance:
+✅ Experimento completo.
 
 - [x] Andamiaje y brief compartido
-- [ ] To-Do con SpecOps
-- [ ] To-Do con Marco Estructural
-- [ ] Análisis comparativo
+- [x] To-Do con SpecOps — ceremonia completa, build verde, audit **PASS**
+- [x] To-Do con Marco Estructural — ceremonia completa, build verde, gate **FAIL (1 bloqueante: firma humana)**
+- [x] Análisis comparativo → [`COMPARACION.md`](./COMPARACION.md)
+
+## Hallazgo central
+
+El código salió **funcionalmente idéntico** en ambas apps; toda la diferencia está
+en el *proceso*:
+
+- **SpecOps** cerró en **PASS** porque la propia IA se auto-certificó (control
+  propositivo, verdad en prosa).
+- **Marco Estructural** quedó en **FAIL** porque el gate **rehúsa avanzar sin firma
+  humana** en un cambio de riesgo `critical` (control coercitivo, evidencia
+  verificable). El operador eligió no firmar — el framework, fiel a su filosofía, no
+  avanzó.
+
+> SpecOps cree que basta con *hacer visible* la decisión.
+> El Marco cree que hay que *hacerla obligatoria y verificable*.
+
+Análisis completo en [`COMPARACION.md`](./COMPARACION.md).
 
 ---
 
