@@ -1,67 +1,52 @@
 # Marco Estructural vs SpecOps — Análisis filosófico
 
-Comparativa empírica de **dos filosofías de gobernanza de código asistido por IA**,
-construyendo **la misma aplicación de To-Do list dos veces** —una bajo cada
-framework— y analizando las diferencias de proceso, artefactos y resultado.
+Comparación de **dos filosofías de gobernanza de desarrollo de software asistido
+por IA**, desde su *filosofía, objetivo y modelo de trabajo* — no desde la calidad
+de implementación.
 
 ## Las dos filosofías
 
 | | **SpecOps** | **Marco Estructural** |
 |---|---|---|
-| **Repo** | `vozdigitalCL/spec-ops` | `vozdigitalCL/marco_estructural` |
-| **Idea central** | *Spec-driven*: las **decisiones cerradas** son la fuente de verdad; el código emerge de ellas. | *Governance-driven*: 8 principios inmutables + **gates bloqueantes** que impiden avanzar sin evidencia. |
-| **Interfaz** | Un comando conversacional único: `/spec`. | CLI `marco.py` (dispatch → task → gate) + skills de Claude Code. |
-| **Estilo de control** | Suave / propositivo. | Estricto / coercitivo (hooks de git, gate que bloquea commits). |
-| **Verificación** | Auditoría semántica (`audit-lead`). | Evidencia mecánica + debate adversarial con Codex. |
+| Repo | `vozdigitalCL/spec-ops` | `vozdigitalCL/marco_estructural` |
+| Síntesis | Sistema de **especificación progresiva**: define *qué claridad debe existir antes* de que la IA construya. | Sistema de **gobernanza**: define *con qué permisos opera* la IA, con control procedimental. |
+| Pregunta central | ¿Hay suficiente claridad para construir? | ¿Con qué permiso opera la IA? |
+| Unidad central | La decisión cerrada (`DEC-NNN`) | La sesión estructurada de trabajo |
+
+## Cómo se hace esta comparación
+
+1. **Molde del análisis** → [`INSTRUCCION-ANALISIS.md`](./INSTRUCCION-ANALISIS.md):
+   formato de respuesta (6 partes), reglas (5) y cuadro comparativo (19
+   dimensiones) + 8 ejes, derivados del PDF de referencia.
+2. **Evidencia empírica** → la misma app de To-Do (ver
+   [`SHARED-BRIEF.md`](./SHARED-BRIEF.md)) se construye **dos veces, en chats
+   separados**, cada una ejecutando *de verdad* su framework (no actuándolo):
+   - SpecOps con el comando `/spec`.
+   - Marco Estructural con `bootstrap.py` + `marco.py` + skills.
+3. **Síntesis** → al volver, el análisis filosófico se escribe en este repo
+   siguiendo `INSTRUCCION-ANALISIS.md`.
+
+> Las apps auténticas se construyen en carpetas/repos aparte (p. ej.
+> `todo-specops/`, `todo-marco/`) para no contaminar la comparación con contexto
+> compartido. Este repo es el **hub de análisis**.
 
 ## Estructura del repositorio
 
 ```
 SpecVSMarco/
-├── README.md            ← este archivo (tesis + resultados)
-├── SHARED-BRIEF.md      ← brief canónico idéntico para ambas apps
-├── COMPARACION.md       ← análisis filosófico comparativo (entregable)
-├── spec-ops/            ← framework SpecOps (submódulo clonado)
-├── marco_estructural/   ← framework Marco Estructural (submódulo clonado)
-├── app-specops/         ← To-Do construido siguiendo SpecOps
-└── app-marco/           ← To-Do construido siguiendo Marco Estructural
+├── README.md                ← este archivo
+├── SHARED-BRIEF.md          ← brief canónico idéntico para ambas apps
+├── INSTRUCCION-ANALISIS.md  ← molde del análisis (formato, reglas, cuadro)
+└── (ANÁLISIS.md)            ← pendiente: se escribe tras los runs auténticos
 ```
 
-## Metodología del experimento
-
-1. **Brief único** (`SHARED-BRIEF.md`): mismo producto, mismo stack
-   (React + TS + Supabase), mismo alcance CRUD. Así la comparación mide la
-   *metodología*, no el alcance.
-2. **Ceremonia completa**: cada app se construye respetando el flujo real de su
-   framework, de principio a fin, generando sus artefactos de gobernanza.
-3. **Observación**: se registra fricción, ceremonia, artefactos y código.
-4. **Síntesis**: el análisis vive en `COMPARACION.md`.
+> Los clones de los frameworks (`spec-ops/`, `marco_estructural/`) están en
+> `.gitignore`: son material de referencia local, no parte del análisis.
 
 ## Estado
 
-✅ Experimento completo.
-
-- [x] Andamiaje y brief compartido
-- [x] To-Do con SpecOps — ceremonia completa, build verde, audit **PASS**
-- [x] To-Do con Marco Estructural — ceremonia completa, build verde, gate **FAIL (1 bloqueante: firma humana)**
-- [x] Análisis comparativo → [`COMPARACION.md`](./COMPARACION.md)
-
-## Hallazgo central
-
-El código salió **funcionalmente idéntico** en ambas apps; toda la diferencia está
-en el *proceso*:
-
-- **SpecOps** cerró en **PASS** porque la propia IA se auto-certificó (control
-  propositivo, verdad en prosa).
-- **Marco Estructural** quedó en **FAIL** porque el gate **rehúsa avanzar sin firma
-  humana** en un cambio de riesgo `critical` (control coercitivo, evidencia
-  verificable). El operador eligió no firmar — el framework, fiel a su filosofía, no
-  avanzó.
-
-> SpecOps cree que basta con *hacer visible* la decisión.
-> El Marco cree que hay que *hacerla obligatoria y verificable*.
-
-Análisis completo en [`COMPARACION.md`](./COMPARACION.md).
+🚧 Listo para ejecutar las dos filosofías en chats separados; el análisis
+comparativo final se redactará después con la evidencia de ambos runs.
 
 ---
 
