@@ -56,25 +56,59 @@
 
 ## 🟩 Marco Estructural — `todo-marco`
 
+> Fuente: `todo-marco/docs/retrospectiva-sesion-fase1.md` + anotaciones del evaluador.
+> Cubre hasta el cierre de Fase 1.
+
 **1. Cómo arrancó la sesión**
-- _(pendiente)_
+- **No habló de la app primero.** Ejecutó el protocolo del Marco antes de responder: `drift-audit.sh --inform` (pre-flight, sin drift) → leyó `project.manifest.json`, `AGENTS.md` y los 4 contratos → leyó del framework `principles.md`, `stack/frontend-react-ts.md`, `stack/database-schema.md`.
+- Recién después resumió estado y citó el **Principio 2 (Contratos Explícitos)**: no se codea con contratos vacíos.
+- **Arranque ritual y automático, no conversacional**: es *carga de contexto*, no discovery de producto.
 
 **2. Qué preguntó y en qué orden / qué NO preguntó**
-- _(pendiente)_
+- **Una sola tanda de 3 preguntas** (selector), las que **determinan esquema/arquitectura**: (1) dónde viven las tareas → local navegador; (2) features v1 (multi) → las 4; (3) usuarios → solo yo, sin login.
+- **NO preguntó**: el **stack** (ya fijado en el manifest como DEC-001 por el bootstrap), el **perfil documental** (LIGHT, DEC-002), el **modelo de datos** (lo diseñó el agente y lo escribió en `blueprint.md`), ni los **casos borde** (aparecieron implícitos en invariantes, sin ronda explícita "¿qué pasa si…?").
+- Preguntas **eficientes pero acotadas a lo arquitectónico**; producto/UX y edge cases se resolvieron bajo "guíame vos", no por interrogación.
 
 **3. Cuándo documentó · cuándo decidió · cuándo construyó**
-- _(pendiente)_
+- **Dos gates, no uno.** Gate 1: tras las 3 preguntas registró **DEC-003** (localStorage, divergiendo del `database-schema` del manifest → documentado, no silenciado), **DEC-004** (sin auth), **DEC-005** (Vite); y llenó `constitution`, `roadmap`, `blueprint`. Gate 2: presentó el plan y pidió OK explícito ("¿le doy con el scaffolding de Fase 1?") → tu "vamos" habilitó codear.
+- La decisión **cerró por capas**: preguntas → contratos → confirmación → implementación.
 
 **4. Artefactos generados**
-- _(pendiente)_
+- **Pre-existentes (bootstrap)**: `project.manifest.json`, `CLAUDE.md`, `AGENTS.md`, `.claude/hooks/*`, `.marco/`, `docs/`, y los 4 contratos **como plantillas vacías** con DEC-001/002 ya puestas.
+- **Llenados/creados en sesión**: `contracts/` (constitution INV-1..5, roadmap, blueprint con modelo de datos, decisions DEC-003..007); proyecto Vite+TS (`package.json`, tsconfigs, `src/` con `types/services/hooks/components/tabs/utils/config`); **tests** (Vitest).
+- Nota: el Marco **no usa `project-spec/`** (eso es SpecOps); la "spec" vive distribuida en `contracts/`.
 
 **5. Cómo cerró**
-- _(pendiente)_
+- Verificación funcional real en navegador (CRUD + persistencia INV-1, sin errores).
+- Checklist **`pre-merge`** → 1 "No": faltaban tests → **TD-1**. **Te preguntó cómo resolverlo** → elegiste agregarlos ahora → Vitest (DEC-006), 8 tests; apareció una **vуln crítica en vitest** → upgrade v4 → `npm audit` 0.
+- Checklist **`cierre-fase`** + **DEC-007** (cierre formal Fase 1).
+- **`debate` reviewer externo (orquestador): NO se ejecutó** — sustituido por revisión inline documentada (desproporcionado para MVP trivial + counterpart no garantizado).
+- **Commit/push: NO** (no los pediste; quedaron pendientes de tu autorización). Fase 1 cerrada (DEC-007), TD-1 saldada, sin deuda abierta.
 
 **6. Fricción / sensaciones**
-- _(pendiente)_
+- ✅ Fluyó: pre-flight de un comando; tanda de 3 preguntas al grano; DECs antes de codear dieron base clara; loop build→test→navegador directo; el checklist atrapó el hueco real (tests).
+- ⚠️ Se trabó: el **preflight clasificó mal por keywords** ("ai-agent-behavior / new-technology / external-integration, riesgo high") en una app sin nada de eso → hubo que ignorarlo; el **manifest pre-comprometió una base de datos** antes de conocer el caso de uso → forzó la divergencia correctiva DEC-003 desde el día 1; contratos como plantillas vacías (dan formato, no ahorran pensar); hiccups de toolchain (`erasableSyntaxOnly`, vuln de vitest); **gobernanza pesada vs app trivial** (pide debates externos desproporcionados); artefacto de la herramienta de preview corrompió un input.
+- Síntesis: **fuerte en gobernanza y trazabilidad, pero calibrado para proyectos medianos/grandes**; en un MVP trivial parte de la ceremonia agrega fricción que hay que sortear con criterio.
+
+**🗒️ Anotaciones personales del evaluador (verbatim)**
+- Instalación fácil, no requiere gran cosa.
+- **Planteamiento estricto / encierra al proyecto desde el comienzo** (perfil LIGHT o cualquier perfil).
+- **No hay contexto del problema más que el del comienzo**; **contexto mínimo.**
+- **Solo stacks disponibles**; **requiere conocimientos previos.**
+- **Abrumador**; "instala a ciegas hasta que topa un error y luego corrige". En sí es un **"arranca y no pregunto mucho".**
+- **Cumple bastante el contexto y se autogestiona.**
+- **Contratos específicos → dan confiabilidad** al producto y al proceso de la app.
+- **Funcional y más rápido.**
+- ⚠️ **El humano a veces pierde el control si no lee cada documentación.**
 
 ---
 
 ## Diferencias que ya saltan a la vista
-- _(se completa sobre la marcha)_
+- **Arranque:** SpecOps *pregunta primero* (discovery humano, difiere el stack); Marco *carga contexto y arranca* (stack ya pre-decidido en el manifest, "no pregunto mucho").
+- **Dónde vive el problema:** SpecOps construye **contexto del problema** (reconoce el dolor); Marco tiene **contexto mínimo** del problema más allá del arranque, pero **contratos técnicos específicos** que dan confiabilidad.
+- **Stack:** SpecOps = **libertad con recomendación** según el problema; Marco = **solo stacks disponibles**, fijado upfront (y si el caso de uso lo contradice, se corrige con una DEC divergente).
+- **Ritmo:** SpecOps = **lento, tedioso, "de a poco"**; Marco = **más rápido y funcional**.
+- **Control humano:** SpecOps = el humano confirma cada etapa (control alto, a veces redundante); Marco = el humano **puede perder el control si no lee cada documento**.
+- **Clasificación de riesgo:** ambos arrastran ruido, pero el de Marco es **explícito y por keywords** (preflight mal-clasifica), mientras SpecOps no clasifica por keywords.
+- **Cierre:** ambos verifican en navegador de verdad; SpecOps cierra con **auditoría PASS**; Marco cierra con **checklists + DECs** y dejó el **debate externo sin ejecutar** (desproporcionado).
+- **Curva de entrada:** SpecOps = **más natural al humano**; Marco = **requiere conocimientos previos**, "instala a ciegas".
