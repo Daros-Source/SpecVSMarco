@@ -18,11 +18,17 @@ de implementación.
 1. **Molde del análisis** → [`INSTRUCCION-ANALISIS.md`](./INSTRUCCION-ANALISIS.md):
    formato de respuesta (6 partes), reglas (5) y cuadro comparativo (19
    dimensiones) + 8 ejes, derivados del PDF de referencia.
-2. **Evidencia empírica** → la misma app de To-Do (ver
-   [`SHARED-BRIEF.md`](./SHARED-BRIEF.md)) se construye **dos veces, en chats
-   separados**, cada una ejecutando *de verdad* su framework (no actuándolo):
+2. **Evidencia empírica** → la misma app de To-Do (ver [`BRIEF.md`](./BRIEF.md))
+   se construye **dos veces, en chats separados**, cada una ejecutando *de verdad*
+   su framework (no actuándolo):
    - SpecOps con el comando `/spec`.
    - Marco Estructural con `bootstrap.py` + `marco.py` + skills.
+
+   > **El `BRIEF.md` es deliberadamente ciego:** es un brief de producto normal que
+   > NO menciona que las apps serán comparadas, ni nombra a SpecOps/Marco, ni habla
+   > de "experimento". Así ningún framework opera sabiéndose evaluado (se evita el
+   > sesgo del observador). El contexto de comparación vive solo en este repo (que
+   > los chats de construcción nunca leen).
 3. **Síntesis** → al volver, el análisis filosófico se escribe en este repo
    siguiendo `INSTRUCCION-ANALISIS.md`.
 
@@ -35,7 +41,7 @@ de implementación.
 ```
 SpecVSMarco/
 ├── README.md                ← este archivo
-├── SHARED-BRIEF.md          ← brief canónico idéntico para ambas apps
+├── BRIEF.md                 ← brief de producto ciego (idéntico para ambas apps)
 ├── INSTRUCCION-ANALISIS.md  ← molde del análisis (formato, reglas, cuadro)
 └── (ANÁLISIS.md)            ← pendiente: se escribe tras los runs auténticos
 ```
