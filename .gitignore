@@ -1,0 +1,17 @@
+# Clones de los frameworks (material de referencia externo, no parte del análisis)
+/spec-ops/
+/marco_estructural/
+
+# Node / Vite
+node_modules/
+dist/
+.env
+.env.local
+*.log
+
+# Supabase
+.supabase/
+
+# OS
+.DS_Store
+Thumbs.db
