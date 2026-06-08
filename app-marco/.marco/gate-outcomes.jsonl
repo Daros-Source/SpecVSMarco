@@ -1,0 +1,35 @@
+{"timestamp": "2026-06-08T14:59:13Z", "check": "Archivos prohibidos modificados", "severity": "FAIL", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "scope", "severity": "WARN", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T14:59:13Z", "check": "human_approval_required=true pero approved_by no es una apro", "severity": "FAIL", "task_id": "TASK-2026-06-08-001", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "scope", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "ui-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "pre-merge-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "data-integrity-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "architect-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:08:26Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:10:06Z", "check": "scope", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:10:06Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:10:06Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:10:06Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:10:06Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-002", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "scope", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "evidence-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "documentation-review", "severity": "FAIL", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:18:31Z", "check": "human_approval_required=true pero approved_by no es una apro", "severity": "FAIL", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "scope", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "simplicity_budget", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "path-risk", "severity": "WARN", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}
+{"timestamp": "2026-06-08T15:21:41Z", "check": "human_approval_required=true pero approved_by no es una apro", "severity": "FAIL", "task_id": "TASK-2026-06-08-003", "outcome_label": "unclassified", "release_run": false}

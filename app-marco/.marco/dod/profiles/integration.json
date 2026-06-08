@@ -1,0 +1,26 @@
+{
+  "name": "integration",
+  "version": "1.0.0",
+  "description": "DoD para integraciones con APIs externas / webhooks",
+  "required_evidence": [
+    "security-review",
+    "observability-review",
+    "pre-merge-review"
+  ],
+  "acceptance_criteria_base": [
+    "Timeouts y manejo de errores implementados",
+    "API keys en variables de entorno (nunca hardcoded)",
+    "Webhooks son idempotentes",
+    "Logs en operaciones criticas (request_id/correlation_id)",
+    "Tests con mocks de la integracion externa",
+    "Sin findings P0 abiertos",
+    "Rate limiting considerado donde aplica"
+  ],
+  "rollback_plan_required": true,
+  "default_allowed_files": ["src/integrations/**", "src/services/**", "tests/**"],
+  "default_forbidden_files": [
+    ".env", ".env.*", "**/secrets/**", "*.pem", "*.key"
+  ],
+  "max_files_changed_default": 8,
+  "max_net_new_lines_default": 500
+}

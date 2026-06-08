@@ -1,0 +1,16 @@
+{
+  "check": "documentation-review",
+  "task_id": "TASK-2026-06-08-003",
+  "status": "PASS",
+  "timestamp": "2026-06-08T15:30:00Z",
+  "reviewer": "claude (modo REVIEWER)",
+  "files_reviewed": [
+    "README.md",
+    "project.manifest.json",
+    "contracts/decisions.md",
+    ".marco/decisions/closed/DEC-PROJECT-001.md"
+  ],
+  "findings": [],
+  "blocking": false,
+  "notes": "README documenta puesta en marcha, variables de entorno (sin .env.* por safety-policy) y estructura por capas. project.manifest.json refleja stack y capabilities reales. DEC-PROJECT-001 cerrada y aprobada documenta el contrato. Sin drift entre docs y codigo implementado."
+}

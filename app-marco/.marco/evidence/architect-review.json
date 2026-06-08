@@ -1,0 +1,18 @@
+{
+  "check": "architect-review",
+  "task_id": "TASK-2026-06-08-003",
+  "status": "PASS",
+  "timestamp": "2026-06-08T15:00:00Z",
+  "reviewer": "claude (modo ARCHITECT)",
+  "files_reviewed": [
+    "src/config/supabaseConfig.ts",
+    "src/services/taskService.ts",
+    "src/hooks/useTasks.ts",
+    "src/screens/TodoScreen.tsx",
+    "src/types/task.types.ts",
+    "src/utils/taskValidation.ts"
+  ],
+  "findings": [],
+  "blocking": false,
+  "notes": "La arquitectura respeta stack/frontend-react-ts.md: capas config -> services -> hooks -> components/screens. Ningun componente importa Supabase ni usa import.meta.env directo (centralizado en /config). Responsabilidad unica por archivo. Fuente unica de verdad: refetch tras cada mutacion. Sin store global (no necesario, justificado). Sin debate con orquestador Codex por ser dominio trivial y contrato cerrado en DEC-PROJECT-001; se deja registrado."
+}

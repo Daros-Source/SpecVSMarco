@@ -1,0 +1,26 @@
+{
+  "check": "data-integrity-review",
+  "task_id": "TASK-2026-06-08-003",
+  "status": "PASS",
+  "timestamp": "2026-06-08T15:05:00Z",
+  "reviewer": "claude (modo REVIEWER)",
+  "files_reviewed": [
+    "supabase/migration.sql",
+    "src/services/taskService.ts",
+    "src/types/task.types.ts"
+  ],
+  "findings": [
+    {
+      "id": "DI-001",
+      "severity": "P3",
+      "status": "resolved",
+      "summary": "Hard delete en lugar del soft delete recomendado por el default del Marco.",
+      "classification": "risk_or_technical_debt",
+      "explanation": "El dispatch recomienda preferir soft delete. El brief compartido exige borrado permanente para paridad con app-specops.",
+      "impact": "Sin recuperacion de tareas borradas. Aceptable en dominio trivial sin datos sensibles.",
+      "recommendation": "Si el producto pasara a real, reevaluar con columna deleted_at via nueva decision."
+    }
+  ],
+  "blocking": false,
+  "notes": "Migracion idempotente (IF NOT EXISTS) con plan de rollback explicito comentado. CHECK de titulo (1..255 tras trim) protege integridad en BD ademas de la validacion en cliente. id y created_at los asigna la BD. Sin DROP/TRUNCATE en runtime."
+}

@@ -1,0 +1,106 @@
+{
+  "task_id": "TASK-2026-06-08-003",
+  "title": "Implementar CRUD de tareas",
+  "description": "Tabla tasks en Supabase (schema/migracion idempotente con rollback), servicio de datos, hook, y UI React con formulario, lista, completar y eliminar (operacion destructiva: delete permanente), con estados cargando/error/vacio. Segun stack/frontend-react-ts.md y DEC-PROJECT-001.",
+  "mode": "BUILDER",
+  "risk_level": "critical",
+  "affected_areas": [
+    "tasks",
+    "data",
+    "ui"
+  ],
+  "dispatch_rules": [
+    "db-model",
+    "new-screen",
+    "destructive-operation",
+    "critical-fix",
+    "ai-agent-behavior"
+  ],
+  "required_before": [
+    "architect-review",
+    "data-integrity-review",
+    "security-review"
+  ],
+  "required_after": [
+    "data-integrity-review",
+    "ui-review",
+    "pre-merge-review",
+    "evidence-review",
+    "documentation-review"
+  ],
+  "required_evidence": [
+    "ui-review",
+    "pre-merge-review"
+  ],
+  "allowed_files": [
+    "src/**",
+    "supabase/**",
+    "index.html",
+    "package.json",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "vite.config.ts",
+    ".env.example",
+    "README.md"
+  ],
+  "forbidden_files": [
+    ".env",
+    ".env.*",
+    "**/secrets/**",
+    "*.pem",
+    "*.key",
+    "src/auth/**",
+    "src/payments/**"
+  ],
+  "acceptance_criteria": [
+    "Componente implementado segun spec del work-order",
+    "Cumple REGLAS de policies/presets/vozdigital/design-system/DESIGN_SYSTEM.md",
+    "Estados de UI bien resueltos: loading, error, empty, success",
+    "Accesibilidad basica verificada (labels, contraste, navegacion teclado)",
+    "Responsive en mobile y desktop",
+    "i18n: strings visibles usan t('namespace.key')",
+    "Tests de componente pasan",
+    "Sin findings P0 abiertos"
+  ],
+  "rollback_plan": "No requerido por DoD profile",
+  "human_approval_required": true,
+  "guiding_principles": {
+    "architecture": "Simplicity verifiable — responsabilidades claras, flujos visibles.",
+    "code": "Less code, fewer special cases — funciones pequeñas, tipos fuertes.",
+    "design": "Invisible design — la UI sirve al usuario, no al desarrollador.",
+    "safety": "No data loss, no sensitive exposure — fail loudly.",
+    "observability": "Loud failures — errores visibles, logs trazables.",
+    "evidence": "Evidence first — no merge sin evidencia de checks requeridos."
+  },
+  "creative_freedom": {
+    "allowed": true,
+    "mode": "propose_before_implementing",
+    "may_suggest_architecture_changes": true,
+    "may_suggest_scope_changes": true,
+    "may_implement_out_of_scope_changes": false,
+    "must_label_suggestions_as": [
+      "required",
+      "recommended_in_scope",
+      "valuable_out_of_scope",
+      "risk_or_technical_debt"
+    ]
+  },
+  "simplicity_budget": {
+    "max_files_changed": 10,
+    "max_net_new_lines": 600,
+    "new_dependencies_allowed": false,
+    "new_abstractions_require_justification": true,
+    "must_report_deleted_code": true
+  },
+  "created_at": "2026-06-08T15:12:44Z",
+  "task_class": "standard-change",
+  "fast_path": false,
+  "base_ref": "f21b0f1bc0d728085612009a87c257c5ef0fc284",
+  "framework_version": "4.0.0",
+  "migration_mode": "transitional",
+  "decision_ref": "DEC-PROJECT-001",
+  "initiative_class": "feature",
+  "dod_profile": "ui",
+  "acceptance_criteria_source": "C:\\Users\\Dylhan\\Desktop\\SpecVSMarco\\app-marco\\.marco\\dod\\profiles\\ui.json",
+  "allowed_files_source": ".marco/decisions/closed/DEC-PROJECT-001.md"
+}

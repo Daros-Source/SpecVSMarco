@@ -1,0 +1,29 @@
+{
+  "check": "security-review",
+  "task_id": "TASK-2026-06-08-003",
+  "status": "PASS_WITH_CONDITIONS",
+  "timestamp": "2026-06-08T15:10:00Z",
+  "reviewer": "claude (modo REVIEWER)",
+  "files_reviewed": [
+    "src/config/supabaseConfig.ts",
+    "supabase/migration.sql"
+  ],
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "P2",
+      "status": "confirmed",
+      "summary": "Acceso anonimo total a la tabla tasks (RLS permisiva, sin auth).",
+      "classification": "risk_or_technical_debt",
+      "file": "supabase/migration.sql",
+      "explanation": "La politica RLS anon full access permite lectura/escritura a cualquiera con la URL + anon key, porque el experimento no tiene autenticacion.",
+      "recommendation": "Aceptado como riesgo residual (manifest handles_sensitive_data=false, DEC-PROJECT-001 seccion Seguridad). Para produccion: activar auth + RLS por usuario via nueva decision."
+    }
+  ],
+  "blocking": false,
+  "conditions": [
+    "El riesgo de acceso anonimo se acepta solo mientras el proyecto sea experimental y sin datos sensibles.",
+    "No introducir datos personales en la tabla tasks sin reabrir una decision de seguridad."
+  ],
+  "notes": "Sin credenciales hardcodeadas. Solo anon key, leida desde /config. service_role nunca en cliente. Validacion de entrada en cliente y BD. Sin console.log en produccion. No se versiona .env.* (safety-policy): variables documentadas en README."
+}
