@@ -45,7 +45,8 @@ siempre · Inicio de sesión · Identidad del sistema.
 
 ## Insumo adicional (este experimento)
 Cuando vuelvas a este chat tras ejecutar ambas filosofías en chats separados,
-el análisis se enriquecerá con la **evidencia empírica** de haber construido la
-misma app (`BRIEF.md`) bajo cada una: artefactos, fricción y, sobre todo,
+el análisis se enriquecerá con la **evidencia empírica** de haber arrancado la
+misma app desde cero (mismo objetivo neutro; respuestas equivalentes según
+`GUION-RESPUESTAS.md`) bajo cada una: discovery, artefactos, fricción y, sobre todo,
 el contraste de cierre (SpecOps auto-certifica PASS; el gate del Marco exige firma
 humana). Eso alimenta el eje 7 (diferencias profundas) y el cierre.

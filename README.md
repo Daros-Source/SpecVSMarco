@@ -18,17 +18,19 @@ de implementación.
 1. **Molde del análisis** → [`INSTRUCCION-ANALISIS.md`](./INSTRUCCION-ANALISIS.md):
    formato de respuesta (6 partes), reglas (5) y cuadro comparativo (19
    dimensiones) + 8 ejes, derivados del PDF de referencia.
-2. **Evidencia empírica** → la misma app de To-Do (ver [`BRIEF.md`](./BRIEF.md))
-   se construye **dos veces, en chats separados**, cada una ejecutando *de verdad*
-   su framework (no actuándolo):
+2. **Evidencia empírica** → en **dos chats separados**, cada framework arranca de
+   cero con una **misma frase-objetivo neutra** y conduce *su propio discovery*
+   (no se le entrega un brief con stack ni contrato de datos). Cada uno ejecuta *de
+   verdad* su framework, no actuándolo:
    - SpecOps con el comando `/spec`.
    - Marco Estructural con `bootstrap.py` + `marco.py` + skills.
 
-   > **El `BRIEF.md` es deliberadamente ciego:** es un brief de producto normal que
-   > NO menciona que las apps serán comparadas, ni nombra a SpecOps/Marco, ni habla
-   > de "experimento". Así ningún framework opera sabiéndose evaluado (se evita el
-   > sesgo del observador). El contexto de comparación vive solo en este repo (que
-   > los chats de construcción nunca leen).
+   > **Arranque ciego y mínimo.** No se da un brief cerrado: el objetivo es observar
+   > *cómo cada filosofía entrevista, decide y construye desde cero*. Para mantener
+   > los runs comparables, el evaluador responde las preguntas de cada framework de
+   > forma consistente usando [`GUION-RESPUESTAS.md`](./GUION-RESPUESTAS.md) — un
+   > archivo **privado** que los chats de construcción **nunca leen** (evita el sesgo
+   > del observador). El contexto de comparación vive solo en este hub.
 3. **Síntesis** → al volver, el análisis filosófico se escribe en este repo
    siguiendo `INSTRUCCION-ANALISIS.md`.
 
@@ -41,7 +43,7 @@ de implementación.
 ```
 SpecVSMarco/
 ├── README.md                ← este archivo
-├── BRIEF.md                 ← brief de producto ciego (idéntico para ambas apps)
+├── GUION-RESPUESTAS.md      ← privado: frase-objetivo + respuestas consistentes (NO se da a los chats)
 ├── INSTRUCCION-ANALISIS.md  ← molde del análisis (formato, reglas, cuadro)
 └── (ANÁLISIS.md)            ← pendiente: se escribe tras los runs auténticos
 ```
