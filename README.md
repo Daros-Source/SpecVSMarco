@@ -45,7 +45,8 @@ SpecVSMarco/
 ├── README.md                ← este archivo
 ├── GUION-RESPUESTAS.md      ← privado: frase-objetivo + respuestas consistentes (NO se da a los chats)
 ├── INSTRUCCION-ANALISIS.md  ← molde del análisis (formato, reglas, cuadro)
-└── (ANÁLISIS.md)            ← pendiente: se escribe tras los runs auténticos
+├── NOTAS-RUNS.md            ← bitácora de ambos runs + anotaciones del evaluador
+└── ANALISIS.md              ← análisis filosófico final ✅
 ```
 
 > Los clones de los frameworks (`spec-ops/`, `marco_estructural/`) están en
@@ -53,8 +54,16 @@ SpecVSMarco/
 
 ## Estado
 
-🚧 Listo para ejecutar las dos filosofías en chats separados; el análisis
-comparativo final se redactará después con la evidencia de ambos runs.
+✅ Experimento completo. Ambas filosofías se ejecutaron de verdad en chats
+separados desde un arranque ciego idéntico; la evidencia está en
+[`NOTAS-RUNS.md`](./NOTAS-RUNS.md) y el análisis filosófico final en
+[`ANALISIS.md`](./ANALISIS.md).
+
+**Conclusión (resumen):** para el objetivo de un asistente *progresivo, trazable y
+usable en proyectos reales*, **SpecOps** está más alineado (prerequisitos +
+progresividad + portabilidad). Para **garantías inquebrantables en contextos
+críticos** (alto riesgo, equipos, compliance), el enforcement coercitivo del **Marco
+Estructural** es la fortaleza. No son mejor/peor: responden a objetivos distintos.
 
 ---
 
