@@ -46,7 +46,9 @@ SpecVSMarco/
 ├── GUION-RESPUESTAS.md      ← privado: frase-objetivo + respuestas consistentes (NO se da a los chats)
 ├── INSTRUCCION-ANALISIS.md  ← molde del análisis (formato, reglas, cuadro)
 ├── NOTAS-RUNS.md            ← bitácora de ambos runs + anotaciones del evaluador
-└── ANALISIS.md              ← análisis filosófico final ✅
+├── AUDITORIA-CRUZADA.md     ← Marco audita a SpecOps y viceversa
+├── ANALISIS.md              ← análisis filosófico final ✅
+└── 01-Evaluacion-Comparativa.pdf ← evaluación por eje + matriz de puntuación (PDF) ✅
 ```
 
 > Los clones de los frameworks (`spec-ops/`, `marco_estructural/`) están en
